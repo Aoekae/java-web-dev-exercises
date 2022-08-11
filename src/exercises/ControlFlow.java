@@ -1,24 +1,37 @@
 package exercises;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ControlFlow {
     public static void main(String[] args) {
         String testString = "If the product of two terms is zero then common sense says at least one of the two terms has to be zero to start with. So if you move all the terms over to one side, you can put the quadratics into a form that can be factored allowing that side of the equation to equal zero. Once you’ve done that, it’s pretty straightforward from there.";
 
         char[] charactersInString = testString.toCharArray();
+        char[] alphabetAndSuch = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ',', '.'};
 
+        HashMap<Character, Integer> characterAndCountHashMap = new HashMap<>();
+        int[] currentCount = new int[alphabetAndSuch.length];
+        //set the individual counts to zero
+        //for each character in the string, loop through the characters in alphabetAndSuch to see if they match the chars in the string
 
-//        There are multiple ways to approach this task, but one way involves the following steps:
-//        Loop through the string one character at a time,
-//                Store and/or update the count for a given character using an appropriate data structure.
-//        Loop through the data structure to print the results (one character and its count per line).
-//                Which type of data structure (ArrayList, HashMap, or Array) should you use to store character counts? Any can be made to work, but there is a BEST choice.
-//                You’ll need to initialize the counts for the characters in some fashion. It’s probably better to do this as you go through the string instead of doing so before you loop through it. (WHY?)
-//        If you need to review how to create a new class, revisit the instructions in Studio: Area of a Circle.
+        for (int index = 0; index <currentCount.length; index++) {
 
-        for (Character chars: charactersInString) {
-//            System.out.println(chars);
-            for (int index = 0; index )
         }
 
+        for (int index = 0; index < charactersInString.length; index++) {
+
+            for (int indexJ = 0; indexJ < alphabetAndSuch.length; indexJ++) {
+                if (charactersInString[index] == (alphabetAndSuch[indexJ])) {
+
+//                    System.out.println("this is " + charactersInString[index] + " being successfully looped through and acknowledged");
+                    currentCount[indexJ]++;
+                    characterAndCountHashMap.put(alphabetAndSuch[indexJ], currentCount[indexJ]);
+
+                    }
+
+                }
+            }
+        System.out.println(characterAndCountHashMap);
+        }
     }
-}
